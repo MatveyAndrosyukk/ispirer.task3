@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+  <form th:action="@{/index}" method="post">
+      <div class="form-group">
+          <input type="radio" id="language1"
+                 name="language" value="Russian" checked>
+          <label for="language1">Русский</label>
+      </div>
+      <div class="form-group">
+          <input type="radio" id="language2"
+                 name="language" value="English">
+          <label for="language2">English</label>
+      </div>
+
+      <button class="btn btn-success" type="submit">Get your text</button>
+
+      <br>
+      <br>
+
+      <div th:if="${param.russian}">
+          <div class="alert alert-info">Русский текст</div>
+      </div>
+      <div th:if="${param.english}">
+          <div class="alert alert-info">English Text</div>
+      </div>
+  </form>
+</body>
+</html>
